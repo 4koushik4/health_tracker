@@ -15,6 +15,21 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: "dist/spa",
+    // Increase chunk size warning limit
+    chunkSizeWarningLimit: 1000, // Increased from default 500 kB
+    
+    // Optimize chunks with manual splitting
+    rollupOptions: {
+      output: {
+        // Split vendor libraries into separate chunks
+        manualChunks: {
+          // Split React and related libraries
+          react: ["react", "react-dom"],
+          // Group other node_modules
+          vendor: ["axios", "lodash"], // Add other common dependencies
+        },
+      },
+    },
   },
   plugins: [react(), expressPlugin()],
   resolve: {
@@ -31,7 +46,6 @@ function expressPlugin(): Plugin {
     apply: "serve", // Only apply during development (serve mode)
     configureServer(server) {
       const app = createServer();
-
       // Add Express app as middleware to Vite dev server
       server.middlewares.use(app);
     },
