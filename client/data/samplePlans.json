@@ -1,0 +1,50 @@
+{
+  "youngAdult": {
+    "title": "Young Adult (25 years, healthy, no family history)",
+    "vaccines": [
+      "HPV vaccine",
+      "Tdap booster"
+    ],
+    "screenings": [
+      "Blood pressure check every 3 years"
+    ],
+    "lifestyle": [
+      "Daily exercise (30 minutes)",
+      "Limit alcohol intake"
+    ]
+  },
+  "middleAgeSmoker": {
+    "title": "Middle Age (45 years, smoker, family history of diabetes)",
+    "vaccines": [
+      "Annual flu shot"
+    ],
+    "screenings": [
+      "Blood sugar (A1C)",
+      "Cholesterol panel",
+      "Colon cancer screening"
+    ],
+    "lifestyle": [
+      "Quit smoking plan",
+      "Weight management program",
+      "Increase physical activity"
+    ]
+  },
+  "seniorSedentary": {
+    "title": "Senior (65 years, hypertensive, sedentary)",
+    "vaccines": [
+      "Pneumococcal vaccine",
+      "Shingles vaccine",
+      "Annual flu shot"
+    ],
+    "screenings": [
+      "Bone density scan",
+      "Blood pressure monitoring",
+      "Annual vision exam"
+    ],
+    "lifestyle": [
+      "Low-sodium diet",
+      "Daily walking goals (20-30 minutes)",
+      "Balance and flexibility exercises"
+    ]
+  }
+}
