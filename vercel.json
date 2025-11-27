@@ -1,10 +1,10 @@
 {
   "buildCommand": "npm run build:client",
   "outputDirectory": "dist/spa",
-  "rewrites": [
+  "routes": [
     {
-      "source": "/(?!.*\\.)",
-      "destination": "/api"
+      "src": "^/(?!.*\\.).*$",
+      "dest": "/api/index.ts"
     }
   ]
 }
