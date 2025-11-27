@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: "dist/spa",
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 2000,
   },
   plugins: [react(), expressPlugin()],
   resolve: {
@@ -25,7 +25,6 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
-
 function expressPlugin(): Plugin {
   return {
     name: "express-plugin",
@@ -38,3 +37,6 @@ function expressPlugin(): Plugin {
     },
   };
 }
+
+
+
