@@ -21,7 +21,7 @@ export function createServer() {
 
   // Proxy to external ML model (Render)
   app.post("/api/predict", async (req, res) => {
-    const renderUrl = "https://health-advisor-jogw.onrender.com/predict";
+    const renderUrl = "https://health-tracker-backend-1-qcni.onrender.com/predict";
     try {
       const { assessment, data, ...rest } = req.body || {};
       const merged = data && typeof data === "object" ? { assessment, ...data } : { assessment, ...rest };
