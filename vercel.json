@@ -3,6 +3,9 @@
   "outputDirectory": "dist/spa",
   "routes": [
     {
+      "handle": "filesystem"
+    },
+    {
       "src": "/.*",
       "dest": "/api/index.ts"
     }
