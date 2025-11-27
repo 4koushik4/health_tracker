@@ -1,9 +1,4 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "other",
-  "nodeVersion": "20.x",
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "outputDirectory": "dist"
 }
