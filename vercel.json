@@ -1,20 +1,5 @@
 {
   "buildCommand": "npm run build:client",
   "outputDirectory": "dist/spa",
-  "routes": [
-    {
-      "src": "/index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "/(.*)\\.(js|css|svg|png|jpg|jpeg|gif|ico|webp|woff|woff2|ttf|eot)$",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+  "framework": null
 }
