@@ -21,10 +21,14 @@ export function createServer() {
 
   // Proxy to external ML model (Render)
   app.post("/api/predict", async (req, res) => {
-    const renderUrl = "https://health-tracker-backend-1-qcni.onrender.com/predict";
+    const renderUrl =
+      "https://health-tracker-backend-1-qcni.onrender.com/predict";
     try {
       const { assessment, data, ...rest } = req.body || {};
-      const merged = data && typeof data === "object" ? { assessment, ...data } : { assessment, ...rest };
+      const merged =
+        data && typeof data === "object"
+          ? { assessment, ...data }
+          : { assessment, ...rest };
 
       const controller = new AbortController();
       const t = setTimeout(() => controller.abort(), 20000);
@@ -38,17 +42,27 @@ export function createServer() {
 
       const text = await upstream.text();
       let json: any;
-      try { json = JSON.parse(text); } catch {
+      try {
+        json = JSON.parse(text);
+      } catch {
         json = { raw: text };
       }
 
       if (!upstream.ok) {
-        return res.status(upstream.status).json({ error: "Upstream error", status: upstream.status, data: json });
-        }
+        return res
+          .status(upstream.status)
+          .json({
+            error: "Upstream error",
+            status: upstream.status,
+            data: json,
+          });
+      }
 
       return res.json(json);
     } catch (e: any) {
-      return res.status(500).json({ error: "Proxy failed", message: e?.message || String(e) });
+      return res
+        .status(500)
+        .json({ error: "Proxy failed", message: e?.message || String(e) });
     }
   });
 
