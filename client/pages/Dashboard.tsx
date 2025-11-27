@@ -219,7 +219,7 @@ export default function Dashboard() {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <Heart className="h-5 w-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900">HealthPredict</span>
+            <span className="text-xl font-bold text-gray-900">Healthify</span>
           </div>
           <div className="hidden md:flex space-x-6">
             <Link to="/" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Home</Link>
@@ -285,7 +285,7 @@ export default function Dashboard() {
                 <Button variant="outline" size="sm" onClick={async () => {
                   const url = window.location.origin + "/dashboard";
                   if (navigator.share) {
-                    try { await navigator.share({ title: "HealthPredict Dashboard", url }); } catch {}
+                    try { await navigator.share({ title: "Healthify Dashboard", url }); } catch {}
                   } else {
                     try { await navigator.clipboard.writeText(url); toast({ title: "Link copied" }); } catch {}
                   }
