@@ -13,7 +13,7 @@ export default defineConfig(({ command }) => ({
     },
   },
   build: {
-    outDir: "dist/spa",
+    outDir: "build",
     chunkSizeWarningLimit: 50000,
   },
   plugins: [react(), ...(command === "serve" ? [expressPlugin()] : [])],
