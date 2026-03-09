@@ -1,8 +1,8 @@
 {
-  "buildCommand": "npm run build:client",
+  "buildCommand": "npx vite build",
   "outputDirectory": "build",
   "framework": null,
-  "installCommand": "npm install --legacy-peer-deps --include=dev",
+  "installCommand": "npm install --production=false --legacy-peer-deps",
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api" },
     { "source": "/(.*)", "destination": "/index.html" }
